@@ -1,0 +1,34 @@
+[workspace]
+name = "wa-floods"
+description = "Washington's December 2025 floods: rain and river flow over the state's terrain, rendered with forge3d"
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[dependencies]
+python = "3.12.*"
+numpy = "*"
+scipy = "*"
+rasterio = "*"
+pillow = "*"
+ffmpeg = "*"
+python-eccodes = "*"
+geopandas = "*"
+pyogrio = "*"
+shapely = "*"
+
+[pypi-dependencies]
+forge3d = ">=1.39"
+
+[tasks]
+dem = "python scripts/fetch_dem.py"
+boundary = "python scripts/fetch_boundary.py"
+rain = "python scripts/fetch_rain.py"
+gauges = "python scripts/fetch_gauges.py"
+rivers = "python scripts/fetch_rivers.py"
+data = { depends-on = ["dem", "boundary", "rain", "gauges", "rivers"] }
+preview = { cmd = "python scripts/render.py --preview", depends-on = ["data"] }
+render = { cmd = "python scripts/render.py --export", depends-on = ["data"] }
+render-square = { cmd = "python scripts/render.py --export --format 1x1", depends-on = ["data"] }
+render-portrait = { cmd = "python scripts/render.py --export --format 4x5", depends-on = ["data"] }
+stills = { cmd = "python scripts/render.py --stills 200,250,end", depends-on = ["data"] }
+finish = "python scripts/finish.py"
