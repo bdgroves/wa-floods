@@ -2,7 +2,7 @@
 
 ![A frame from the walkthrough notebook, rendered with forge3d](assets/notebook-frame.jpg)
 
-This animates the rain and the rivers across Washington from December 1 to 20, 2025, hour by hour, over 3D terrain, rendered with [forge3d](https://github.com/milos-agathon/forge3d). In that window a strong atmospheric river stalled over the state on December 8–11, a second storm followed on December 15–18, and ten rivers set all-time record crests.
+This animates the rain and the rivers across Washington from December 1 to 20, 2025, hour by hour, over 3D terrain, rendered with [forge3d](https://github.com/milos-agathon/forge3d). In that window a strong atmospheric river stalled over the state on December 8–11, a second storm followed on December 15–18, and by the USGS's count ten rivers set all-time record crests. The film marks the ones its own gauge data confirms: four rivers labelled in pink (the Snoqualmie, Middle Fork Nooksack, Cedar and Ruby Creek), from nine gauges with 20+ years of record that passed their peak. Some of the USGS's ten, like the Skagit at Mount Vernon, don't pass this project's record test; the [write-up](https://brooksgroves.com/blog/wa-floods-post.html) explains why.
 
 On screen:
 
